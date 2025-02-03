@@ -1,0 +1,33 @@
+name: "Segnalazione Bug"
+description: "Usa questo template per segnalare un bug"
+title: "[BUG] - "
+labels: ["bug", "triage"]
+body:
+  - type: textarea
+    attributes:
+      label: "Descrizione del problema"
+      description: "Spiega chiaramente cosa è successo."
+  - type: textarea
+    attributes:
+      label: "Passaggi per riprodurre"
+      description: "Lista dettagliata dei passaggi per riprodurre il problema."
+  - type: textarea
+    attributes:
+      label: "Comportamento atteso"
+      description: "Cosa ti aspettavi che accadesse?"
+  - type: textarea
+    attributes:
+      label: "Screenshot e log"
+      description: "Aggiungi immagini o log se disponibili."
+  - type: dropdown
+    attributes:
+      label: "Sistema operativo"
+      options:
+        - Windows
+        - macOS
+        - Linux
+        - Altro
+  - type: input
+    attributes:
+      label: "Versione dell'app"
+      description: "Indica la versione del software in cui hai trovato il bug."

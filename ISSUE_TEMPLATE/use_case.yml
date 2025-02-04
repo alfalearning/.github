@@ -1,0 +1,67 @@
+name: "Use Case"
+description: "Template per la creazione di un Use Case con attività correlate."
+title: "[Use Case] Breve descrizione dello use case"
+labels: ["use case", "documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: "## Descrizione dello Use Case"
+
+  - type: input
+    id: title
+    attributes:
+      label: "Titolo dello Use Case"
+      description: "Specifica un titolo chiaro per lo use case."
+      placeholder: "es. Gestione dei permessi utente"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Descrizione"
+      description: "Descrivi il contesto e lo scopo dello use case."
+      placeholder: "es. Questo use case descrive come un amministratore può gestire i permessi degli utenti..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: actors
+    attributes:
+      label: "Attori Coinvolti"
+      description: "Elenca gli attori coinvolti nello use case."
+      placeholder: "es. Amministratore, Utente Registrato, Sistema di Autenticazione"
+    validations:
+      required: true
+
+  - type: textarea
+    id: flow
+    attributes:
+      label: "Flusso Principale"
+      description: "Descrivi i passaggi principali dello use case."
+      placeholder: "1. L'utente accede al sistema\n2. L'utente naviga alla pagina di gestione permessi..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternate_flows
+    attributes:
+      label: "Flussi Alternativi"
+      description: "Descrivi eventuali percorsi alternativi o eccezioni."
+      placeholder: "1. Se l'utente non ha i permessi, viene mostrato un messaggio di errore..."
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: "## Task Relativi allo Use Case"
+
+  - type: textarea
+    id: linked_tasks
+    attributes:
+      label: "Task associati (issue esistenti)"
+      description: "Inserisci i numeri delle issue già create per i task di questo use case. Es: #12, #34, #56"
+      placeholder: "#12, #34, #56"
+    validations:
+      required: false
+

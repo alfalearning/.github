@@ -1,33 +1,91 @@
-name: "Segnalazione Bug"
-description: "Usa questo template per segnalare un bug"
-title: "[BUG] - "
+name: "Bug Report"
+description: "Segnala un bug riscontrato nel sistema."
+title: "[BUG] Breve descrizione del problema"
 labels: ["bug", "triage"]
 body:
-  - type: textarea
+  - type: markdown
     attributes:
-      label: "Descrizione del problema"
-      description: "Spiega chiaramente cosa è successo."
-  - type: textarea
+      value: "## 🐛 Descrizione del problema"
+
+  - type: input
+    id: bug_summary
     attributes:
-      label: "Passaggi per riprodurre"
-      description: "Lista dettagliata dei passaggi per riprodurre il problema."
+      label: "Riassunto del bug"
+      description: "Fornisci una breve descrizione del problema."
+      placeholder: "Es. Il login non funziona con le credenziali corrette"
+    validations:
+      required: true
+
   - type: textarea
+    id: bug_steps
+    attributes:
+      label: "Passaggi per riprodurre il bug"
+      description: "Elenca i passaggi per riprodurre il problema."
+      placeholder: |
+        1. Vai alla pagina di login.
+        2. Inserisci le credenziali corrette.
+        3. Clicca su 'Accedi'.
+        4. Viene mostrato un errore invece di effettuare l'accesso.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_behavior
     attributes:
       label: "Comportamento atteso"
-      description: "Cosa ti aspettavi che accadesse?"
+      description: "Descrivi cosa ti aspettavi che accadesse."
+      placeholder: "Es. Dopo aver inserito credenziali corrette, l'utente dovrebbe essere reindirizzato alla dashboard."
+    validations:
+      required: true
+
   - type: textarea
+    id: actual_behavior
     attributes:
-      label: "Screenshot e log"
-      description: "Aggiungi immagini o log se disponibili."
+      label: "Comportamento effettivo"
+      description: "Descrivi cosa è successo effettivamente."
+      placeholder: "Es. Dopo aver inserito credenziali corrette, viene mostrato un errore 401."
+    validations:
+      required: true
+
   - type: dropdown
+    id: severity
     attributes:
-      label: "Sistema operativo"
+      label: "Gravità del problema"
+      description: "Seleziona il livello di gravità del bug."
       options:
-        - Windows
-        - macOS
-        - Linux
-        - Altro
-  - type: input
+        - "🟢 Minore (non blocca l'uso dell'applicazione)"
+        - "🟡 Media (impedisce alcune funzionalità)"
+        - "🔴 Critica (blocco completo o crash)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
     attributes:
-      label: "Versione dell'app"
-      description: "Indica la versione del software in cui hai trovato il bug."
+      label: "Ambiente e Configurazione"
+      description: "Specifica dove hai riscontrato il problema."
+      placeholder: |
+        - **Sistema operativo**: Windows 11 / macOS Ventura / Linux Ubuntu 22.04
+        - **Browser**: Chrome 120.0 / Firefox 116.0
+        - **Versione dell'app**: v2.3.1
+        - **Backend**: Node.js 18.0 / Spring Boot 3.0
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs_screenshots
+    attributes:
+      label: "Log e Screenshot"
+      description: "Allega eventuali errori della console o screenshot per facilitare la diagnosi."
+      placeholder: "Carica qui screenshot o copia-incolla gli errori della console."
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional_info
+    attributes:
+      label: "Ulteriori informazioni"
+      description: "Aggiungi altri dettagli utili per la risoluzione del problema."
+      placeholder: "Es. Il bug si verifica solo su mobile. Il problema sembra legato all'autenticazione OAuth."
+    validations:
+      required: false

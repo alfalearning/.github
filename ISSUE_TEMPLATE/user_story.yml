@@ -1,17 +1,70 @@
 name: "User Story"
-description: "Descrivi una funzionalità da sviluppare"
-title: "[US] - "
-labels: ["user story"]
+description: "Template per la creazione di una user story."
+title: "[Feature] Breve descrizione della user story"
+labels: ["user story", "enhancement"]
 body:
-  - type: textarea
+  - type: markdown
     attributes:
-      label: "Descrizione"
-      description: "Descrizione della funzionalità richiesta."
+      value: "## Descrizione della User Story"
+  
+  - type: input
+    id: role
+    attributes:
+      label: "As a"
+      description: "Specifica il ruolo dell'utente (es. sviluppatore, admin, utente generico)."
+      placeholder: "es. Amministratore di sistema"
+    validations:
+      required: true
+  
+  - type: input
+    id: action
+    attributes:
+      label: "I want"
+      description: "Descrivi l'azione o la funzionalità richiesta."
+      placeholder: "es. poter gestire i permessi degli utenti"
+    validations:
+      required: true
+  
+  - type: input
+    id: reason
+    attributes:
+      label: "So that"
+      description: "Specifica il motivo o il beneficio di questa funzionalità."
+      placeholder: "es. per garantire un controllo granulare sugli accessi"
+    validations:
+      required: true
+  
+  - type: markdown
+    attributes:
+      value: "## Acceptance Criteria"
+  
   - type: textarea
+    id: acceptance_criteria
     attributes:
       label: "Criteri di accettazione"
-      description: "Condizioni che devono essere soddisfatte per completare la user story."
-  - type: textarea
+      description: "Elenca i criteri di accettazione della user story."
+      value: "- [ ] Criterio 1: Descrizione del primo criterio di accettazione.\n- [ ] Criterio 2: Descrizione del secondo criterio di accettazione.\n- [ ] Criterio 3: Ulteriori criteri se necessari."
+    validations:
+      required: true
+  
+  - type: markdown
     attributes:
-      label: "Task"
-      description: "Elenco delle attività necessarie per completare la user story."
+      value: "## Definition of Done"
+  
+  - type: textarea
+    id: definition_of_done
+    attributes:
+      label: "Definition of Done"
+      description: "Definisci i requisiti per considerare la user story completata."
+      value: "- [ ] Tutti i criteri di accettazione sono soddisfatti.\n- [ ] Il codice è stato revisionato e approvato.\n- [ ] Sono stati scritti e superati i test necessari.\n- [ ] La documentazione è aggiornata, se applicabile.\n- [ ] La feature è stata distribuita nell'ambiente [specificare l'ambiente]."
+    validations:
+      required: true
+
+  - type: textarea
+    id: linked_use_cases
+    attributes:
+      label: "Use case associati (issue esistenti)"
+      description: "Inserisci i numeri delle issue già create per gli use case. Es: #12, #34, #56"
+      placeholder: "#12, #34, #56"
+    validations:
+      required: false
